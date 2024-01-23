@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | MiniGameWeb</title>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width="960" height="540" tabindex="-1" style="width: 960px; height: 540px; background: #231F20; margin-top: 150px;"></canvas>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0; overflow: auto;">
+    <canvas id="unity-canvas" width="960" height="540" tabindex="-1" style="width: 960px; height: 540px; background: #231F20; margin-top: 250px;"></canvas>
     <script src="Build/MiniGameWebBuild.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -22,6 +22,7 @@
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
+        document.body.style.overflow = "auto"; // 스크롤 가능하도록 스타일 추가
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
